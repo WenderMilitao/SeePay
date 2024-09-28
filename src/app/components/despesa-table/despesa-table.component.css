@@ -1,0 +1,23 @@
+@import "../../../styles.css";
+
+.mat-mdc-card {
+  width: 1000px; /* Ou qualquer valor desejado */
+}
+
+.mat-mdc-table {
+  width: 100%; /* Faz a tabela ocupar toda a largura disponível do card */
+  overflow: auto;
+  max-height: 500px; /* Ou qualquer valor desejado */
+  border-radius: 3px;
+  border-collapse: collapse;
+}
+
+.mat-mdc-header-cell {
+  background-color: var(--primary700) !important;
+}
+
+.mat-mdc-cell {
+  background-color: var(--primary100) !important;
+  color: var(--secondary100) !important;
+  border-bottom: 1px solid var(--primary700);
+}

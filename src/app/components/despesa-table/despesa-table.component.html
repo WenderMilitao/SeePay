@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-header> </mat-card-header>
+  <mat-card-content>
+    <mat-table
+      #table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8"
+      matSort
+    >
+      <!-- Despesa Column -->
+      <ng-container matColumnDef="despesa">
+        <mat-header-cell *matHeaderCellDef> Despesa </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.despesa }} </mat-cell>
+      </ng-container>
+
+      <!-- Valor Column -->
+      <ng-container matColumnDef="valor">
+        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ "R$" + element.valor }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Data Column -->
+      <ng-container matColumnDef="data">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Data
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.data.toDate() | date : "dd/MM/yyyy" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator [pageSize]="5" [showFirstLastButtons]="true">
+    </mat-paginator>
+  </mat-card-content>
+  <mat-card-footer> </mat-card-footer>
+</mat-card>
