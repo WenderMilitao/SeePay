@@ -29,13 +29,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Firebase
 import { firebaseConfig } from './environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DespesaTableComponent } from './components/despesa-table/despesa-table.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { DespesaTableComponent } from './components/despesa-table/despesa-table.
     DespesasComponent,
     DespesaFormComponent,
     DespesaTableComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,8 @@ import { DespesaTableComponent } from './components/despesa-table/despesa-table.
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatTooltipModule,
+    MatDialogModule
 
   ],
   providers: [MatDatepickerModule],

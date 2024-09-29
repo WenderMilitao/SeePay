@@ -12,6 +12,25 @@
       </app-card>
     </mat-grid-tile>
 
+    <mat-grid-tile
+      *ngFor="let i of [1]"
+      [colspan]="(cardLayout | async)?.chart?.cols"
+      [rowspan]="(cardLayout | async)?.chart?.rows"
+    >
+    <app-card>
+      <div class="total-card">
+        <img
+          src="../../../assets/iconcalculator.png"
+          alt="calculator_coin_dollar"
+        />
+        <h2>Total das Despesas</h2>
+        <p>
+          {{ valorTotal | currency : "BRL" : "symbol" : "1.2-2" }}
+        </p>
+      </div>
+    </app-card>
+    </mat-grid-tile>
+
     <!--Table-->
     <mat-grid-tile
       [colspan]="(cardLayout | async)?.table?.cols"

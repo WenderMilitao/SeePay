@@ -37,13 +37,16 @@
         <mat-cell *matCellDef="let element">
           <button
             mat-icon-button
-
+            matTooltip="Excluir"
+            matTooltipPosition="above"
           >
             <mat-icon>delete</mat-icon>
           </button>
           <button
             mat-icon-button
-
+            matTooltip="Editar"
+            matTooltipPosition="above"
+            (click)="abrirModal()"
           >
             <mat-icon>edit</mat-icon>
           </button>

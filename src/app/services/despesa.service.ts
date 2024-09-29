@@ -10,9 +10,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class DespesaService {
 
-  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {}
+  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) { }
 
-    private async getUserId(): Promise<string | null> {
+  private async getUserId(): Promise<string | null> {
     const user = await this.afAuth.currentUser;
     return user ? user.uid : null;
   }
@@ -55,6 +55,14 @@ export class DespesaService {
               })
             )
           );
+      })
+    );
+  }
+
+  calcularValorTotal(): Observable<number> {
+    return this.getAllDespesas().pipe(
+      map((despesas) => {
+        return despesas.reduce((total, despesa) => total + despesa.valor, 0);
       })
     );
   }

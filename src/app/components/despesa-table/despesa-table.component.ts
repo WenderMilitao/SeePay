@@ -4,6 +4,8 @@ import { DespesaService } from './../../services/despesa.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -19,6 +21,7 @@ export class DespesaTableComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    private modal: MatDialog,
     private despesaService: DespesaService,
   ) {
     this.despesaService.getAllDespesas().subscribe((res) => {
@@ -28,5 +31,10 @@ export class DespesaTableComponent {
       this.dataSource.sort = this.sort;
     });
   }
-
+  abrirModal() {
+    this.modal.open(ModalComponent, {
+      width: '60%',
+      height: '400px'
+    })
   }
+}

@@ -35,9 +35,16 @@ body {
   --secondary200: #23222266;
   --secondary300: #23222299;
   --error100: #f9beda;
+  --error200: #ff87c1;
   --error500: #c30b64;
-  color:  #0EA47A;
+  color: #0ea47a;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
