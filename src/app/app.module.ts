@@ -39,6 +39,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { DespesaTableComponent } from './components/despesa-table/despesa-table.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { RendimentoFormComponent } from './components/rendimento-form/rendimento-form.component';
+import { RendimentoTableComponent } from './components/rendimento-table/rendimento-table.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     DespesaTableComponent,
     ModalComponent,
     SobreComponent,
+    RendimentoFormComponent,
+    RendimentoTableComponent,
   ],
   imports: [
     BrowserModule,
