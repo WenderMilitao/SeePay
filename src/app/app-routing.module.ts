@@ -7,6 +7,7 @@ import { AuthGuardService } from './services/auth.guard.service';
 import { HomeComponent } from './pages/home/home.component';
 import { RendimentosComponent } from './pages/rendimentos/rendimentos.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,6 +33,11 @@ const routes: Routes = [{
     {
       path: 'despesas',
       component: DespesasComponent,
+    },
+
+    {
+      path: 'sobre',
+      component: SobreComponent,
     },
   ]
  },

@@ -38,6 +38,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DespesaTableComponent } from './components/despesa-table/despesa-table.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ModalComponent } from './components/modal/modal.component';
     DespesaFormComponent,
     DespesaTableComponent,
     ModalComponent,
+    SobreComponent,
   ],
   imports: [
     BrowserModule,
