@@ -23,15 +23,14 @@ mat-grid-tile {
   line-height: normal;
 }
 
-
 .banner p {
-color: white;
-font-family: "Roboto";
-font-size: 1.2rem;
-font-style: normal;
-font-weight: 500;
-margin-bottom: 40px;
-line-height: normal;
+  color: white;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: normal;
 }
 
 .banner .btn {
@@ -55,34 +54,10 @@ line-height: normal;
   align-items: center;
   height: 50%;
 }
-.imagem img{
+.imagem img {
   max-width: 100%;
   max-height: 400px;
   width: auto;
   height: auto;
   object-fit: contain;
-}
-.footer-container {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 2rem;
-}
-footer h2 {
-    font-family: "Handjet", monospace !important;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--primary100) !important;
-    text-shadow: 0 0 4px var(--secondary200) !important;
-    font-size: 1.5rem !important;
-    margin: 0;
-}
-footer p {
-  margin-top: 2.5px;
-}
-
-footer p a{
-  color: #fff;
-  text-decoration: none;
 }
