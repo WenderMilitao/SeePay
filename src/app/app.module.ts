@@ -41,6 +41,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { RendimentoFormComponent } from './components/rendimento-form/rendimento-form.component';
 import { RendimentoTableComponent } from './components/rendimento-table/rendimento-table.component';
+import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { RendimentoTableComponent } from './components/rendimento-table/rendimen
     SobreComponent,
     RendimentoFormComponent,
     RendimentoTableComponent,
+    NaoEncontradoComponent,
   ],
   imports: [
     BrowserModule,
