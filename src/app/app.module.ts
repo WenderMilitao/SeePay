@@ -13,6 +13,8 @@ import { CardComponent } from './components/card/card.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
 import { DespesaFormComponent } from './components/despesa-form/despesa-form.component';
 
+
+
 //Angular Material
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +33,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 //Firebase
 import { firebaseConfig } from './environments/environment';
@@ -84,7 +87,8 @@ import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.co
     MatPaginatorModule,
     MatSortModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
 
   ],
   providers: [MatDatepickerModule],
