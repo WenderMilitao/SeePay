@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { EditarDespesasComponent } from '../editar-despesas/editar-despesas.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -21,7 +21,7 @@ export class DespesaTableComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private modal: MatDialog,
+    private dialog: MatDialog,
     private despesaService: DespesaService,
     private snackBar: MatSnackBar
   ) {
@@ -31,17 +31,23 @@ export class DespesaTableComponent {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-    this.loadDespesas ()
-  }
-  abrirModal() {
-    this.modal.open(ModalComponent, {
-      width: '60%',
-      height: '400px'
-    })
+    this.loadDespesas()
   }
   loadDespesas() {
     this.despesaService.getAllDespesas().subscribe((data) => {
       this.dataSource = data;
+    });
+  }
+  abrirModal(despesa:Despesa) {
+    const dialogRef = this.dialog.open(EditarDespesasComponent, {
+      data: despesa, // Passando a despesa para o modal
+      width: '45%',
+      height: '400px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.loadDespesas(); // Recarrega a lista após edição
+      }
     });
   }
   deleteDespesa(despesaId: string) {

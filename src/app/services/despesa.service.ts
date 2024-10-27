@@ -69,4 +69,9 @@ export class DespesaService {
   deleteDespesa(despesaId: string): Observable<void> {
     return from(this.afs.collection('/despesas').doc(despesaId).delete());
   }
+  updateDespesa(despesa: Despesa): Observable<void> {
+    return from(
+      this.afs.collection('/despesas').doc(despesa.id).update(despesa)
+    );
+  }
 }

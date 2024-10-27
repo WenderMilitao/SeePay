@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -40,7 +41,7 @@ import { firebaseConfig } from './environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DespesaTableComponent } from './components/despesa-table/despesa-table.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { EditarDespesasComponent } from './components/editar-despesas/editar-despesas.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { RendimentoFormComponent } from './components/rendimento-form/rendimento-form.component';
 import { RendimentoTableComponent } from './components/rendimento-table/rendimento-table.component';
@@ -58,11 +59,12 @@ import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.co
     DespesasComponent,
     DespesaFormComponent,
     DespesaTableComponent,
-    ModalComponent,
     SobreComponent,
     RendimentoFormComponent,
     RendimentoTableComponent,
     NaoEncontradoComponent,
+    EditarDespesasComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,8 @@ import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.co
     MatSortModule,
     MatTooltipModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
 
   ],
   providers: [MatDatepickerModule],
