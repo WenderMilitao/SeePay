@@ -1,10 +1,8 @@
 @import "../../../styles.css";
 
 .footer {
-  position: fixed;
   right: 35%;
   bottom: 0;
-  background-color: ;
 }
 .footer-container {
   color: #fff;

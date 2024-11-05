@@ -46,6 +46,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { RendimentoFormComponent } from './components/rendimento-form/rendimento-form.component';
 import { RendimentoTableComponent } from './components/rendimento-table/rendimento-table.component';
 import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.component';
+import { EditarRendimentosComponent } from './components/editar-rendimentos/editar-rendimentos.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.co
     RendimentoTableComponent,
     NaoEncontradoComponent,
     EditarDespesasComponent,
+    EditarRendimentosComponent,
 
   ],
   imports: [
