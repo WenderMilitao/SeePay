@@ -1,15 +1,19 @@
 @import "../../../styles.css";
 
 .mat-mdc-card {
-  width: 1000px; /* Ou qualquer valor desejado */
+  display: flex;
+  width: 1000px;
+  border-radius: 3px;
+}
+
+.mat-mdc-card-header {
+  padding-top: 10px;
 }
 
 .mat-mdc-table {
-  width: 100%; /* Faz a tabela ocupar toda a largura disponível do card */
+  height: 300px;
   overflow: auto;
-  max-height: 500px; /* Ou qualquer valor desejado */
   border-radius: 3px;
-  border-collapse: collapse;
 }
 
 .mat-mdc-header-cell {
