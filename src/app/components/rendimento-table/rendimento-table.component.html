@@ -1,12 +1,7 @@
 <mat-card>
   <mat-card-header> </mat-card-header>
   <mat-card-content>
-    <mat-table
-      #table
-      [dataSource]="dataSource"
-      class="mat-elevation-z8"
-      matSort
-    >
+    <mat-table #table [dataSource]="dataSource" matSort>
       <!-- Rendimento Column -->
       <ng-container matColumnDef="rendimento">
         <mat-header-cell *matHeaderCellDef> Rendimento </mat-header-cell>
