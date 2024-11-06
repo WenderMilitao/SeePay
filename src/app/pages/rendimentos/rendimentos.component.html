@@ -23,9 +23,18 @@
             src="../../../assets/iconcalculator.png"
             alt="calculator_coin_dollar"
           />
-          <h2>Total dos Rendimentos</h2>
-          <p>
-            {{ valorTotal | currency : "BRL" : "symbol" : "1.2-2" }}
+          <p class="total">
+            Total dos Rendimentos:
+            <span class="total">
+              {{
+                valorTotalRendimentos | currency : "BRL" : "symbol" : "1.2-2"
+              }}
+            </span>
+          </p>
+
+          <p class="saldo">
+            Saldo:
+            <span>{{ saldo | currency : "BRL" : "symbol" : "1.2-2" }}</span>
           </p>
         </div>
       </app-card>
