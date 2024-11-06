@@ -1,12 +1,8 @@
 <mat-card>
   <mat-card-header> </mat-card-header>
   <mat-card-content>
-    <mat-table
-      #table
-      [dataSource]="dataSource"
-      class="mat-elevation-z8"
-      matSort
-    > <!--Teste, apagar depois-->
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <!--Teste, apagar depois-->
       <!-- Despesa Column -->
       <ng-container matColumnDef="despesa">
         <mat-header-cell *matHeaderCellDef> Despesa </mat-header-cell>
