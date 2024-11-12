@@ -12,7 +12,7 @@ import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.co
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'cadastro',
+  redirectTo: 'login',
   pathMatch: 'full',
 },
 { path: 'cadastro', component: CadastroComponent },
