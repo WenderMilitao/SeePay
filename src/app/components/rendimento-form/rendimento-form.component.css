@@ -1,0 +1,44 @@
+@import "../../../styles.css";
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+button {
+  background: var(--primary700);
+  margin-top: 15px;
+}
+
+::ng-deep
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::after {
+  border-bottom-color: var(--primary700) !important;
+}
+
+mat-datepicker-toggle {
+  color: var(--primary200) !important;
+}
+
+::ng-deep .mat-calendar-body-cell-content {
+  &.mat-focus-indicator {
+    &:hover {
+      background-color: var(--primary500) !important;
+    }
+  }
+
+  &.mat-calendar-body-selected {
+    background-color: var(--primary500) !important;
+
+    &:hover {
+      background-color: var(--primary700) !important;
+    }
+  }
+  &.mat-calendar-body-today {
+    background-color: #54a398a4 !important;
+  }
+}

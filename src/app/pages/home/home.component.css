@@ -1,0 +1,63 @@
+.container {
+  width: 90vh;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+mat-grid-tile {
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h2 {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Roboto";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.banner p {
+  color: white;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: normal;
+}
+
+.banner .btn {
+  padding: 12px 24px;
+  margin-top: 40px;
+  background: #2a9d8f;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.banner .btn:hover {
+  background: #21867a;
+}
+
+.imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.imagem img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}

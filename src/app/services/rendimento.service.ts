@@ -1,55 +1,55 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Despesa } from './../models/despesa';
 import { from, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-@Injectable({
-  providedIn: 'root'
-})
-export class DespesaService {
+import { Rendimento } from './../models/rendimento';
 
-  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) { }
+@Injectable({
+  providedIn: 'root',
+})
+export class RendimentoService {
+  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {}
 
   private async getUserId(): Promise<string | null> {
     const user = await this.afAuth.currentUser;
     return user ? user.uid : null;
   }
-  addDespesa(despesa: Despesa): Observable<void> {
+  addRendimento(rendimento: Rendimento): Observable<void> {
     return from(this.getUserId()).pipe(
       switchMap((userId) => {
         if (!userId) {
           throw new Error('Usuário não autenticado');
         }
         const id = this.afs.createId();
-        const despesaComId: Despesa = {
+        const rendimentoComId: Rendimento = {
           id: id,
-          despesa: despesa.despesa,
-          valor: despesa.valor,
-          data: despesa.data,
+          rendimento: rendimento.rendimento,
+          valor: rendimento.valor,
+          data: rendimento.data,
           userId: userId,
         };
-        return from(this.afs.collection('/despesas').doc(id).set(despesaComId));
+        return from(
+          this.afs.collection('/rendimentos').doc(id).set(rendimentoComId)
+        );
       })
     );
-
   }
-  getAllDespesas(): Observable<Despesa[]> {
+  getAllRendimentos(): Observable<Rendimento[]> {
     return from(this.getUserId()).pipe(
       switchMap((userId) => {
         if (!userId) {
           throw new Error('Usuário não autenticado');
         }
         return this.afs
-          .collection<Despesa>('/despesas', (ref) =>
+          .collection<Rendimento>('/rendimentos', (ref) =>
             ref.where('userId', '==', userId)
-          ) // Filtrar despesas pelo userId
+          ) // Filtrar rendimentos pelo userId
           .snapshotChanges()
           .pipe(
             map((actions) =>
               actions.map((a) => {
-                const data = a.payload.doc.data() as Despesa;
+                const data = a.payload.doc.data() as Rendimento;
                 const id = a.payload.doc.id;
                 return { id, ...data };
               })
@@ -60,18 +60,21 @@ export class DespesaService {
   }
 
   calcularValorTotal(): Observable<number> {
-    return this.getAllDespesas().pipe(
-      map((despesas) => {
-        return despesas.reduce((total, despesa) => total + despesa.valor, 0);
+    return this.getAllRendimentos().pipe(
+      map((rendimentos) => {
+        return rendimentos.reduce(
+          (total, rendimento) => total + rendimento.valor,
+          0
+        );
       })
     );
   }
-  deleteDespesa(despesaId: string): Observable<void> {
-    return from(this.afs.collection('/despesas').doc(despesaId).delete());
+  deleteRendimento(rendimentoId: string): Observable<void> {
+    return from(this.afs.collection('/rendimentos').doc(rendimentoId).delete());
   }
-  updateDespesa(despesa: Despesa): Observable<void> {
+  updateRendimento(rendimento: Rendimento): Observable<void> {
     return from(
-      this.afs.collection('/despesas').doc(despesa.id).update(despesa)
+      this.afs.collection('/rendimentos').doc(rendimento.id).update(rendimento)
     );
   }
 }

@@ -2,11 +2,12 @@
   <mat-card-header> </mat-card-header>
   <mat-card-content>
     <mat-table #table [dataSource]="dataSource" matSort>
-      <!--Teste, apagar depois-->
-      <!-- Despesa Column -->
-      <ng-container matColumnDef="despesa">
-        <mat-header-cell *matHeaderCellDef> Despesa </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.despesa }} </mat-cell>
+      <!-- Rendimento Column -->
+      <ng-container matColumnDef="rendimento">
+        <mat-header-cell *matHeaderCellDef> Rendimento </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.rendimento }}
+        </mat-cell>
       </ng-container>
 
       <!-- Valor Column -->
@@ -35,7 +36,7 @@
             mat-icon-button
             matTooltip="Excluir"
             matTooltipPosition="above"
-            (click)="deleteDespesa(element.id)"
+            (click)="deleteRendimento(element.id)"
           >
             <mat-icon>delete</mat-icon>
           </button>

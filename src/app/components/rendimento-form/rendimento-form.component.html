@@ -1,0 +1,39 @@
+<form
+  [formGroup]="rendimentoForm"
+  (ngSubmit)="submit()"
+  class="example-container"
+>
+  <mat-form-field>
+    <input formControlName="rendimento" matInput placeholder="Ex. hora extra" />
+    <mat-error *ngIf="rendimentoForm.get('rendimento')?.hasError('required')"
+      >Rendimento é obrigatório</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      formControlName="valor"
+      matInput
+      placeholder="Ex. 500.00"
+      type="number"
+    />
+    <mat-error *ngIf="rendimentoForm.get('valor')?.hasError('required')"
+      >Valor é obrigatório</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      formControlName="data"
+      matInput
+      [matDatepicker]="picker"
+      placeholder="Escolha a data"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="rendimentoForm.get('data')?.hasError('required')"
+      >Data é obrigatória</mat-error
+    >
+  </mat-form-field>
+  <button [disabled]="!rendimentoForm.valid" mat-button type="submit">
+    Cadastrar
+  </button>
+</form>

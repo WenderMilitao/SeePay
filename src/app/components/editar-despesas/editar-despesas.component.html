@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Editar Despesa</h2>
+<form [formGroup]="despesaForm" (ngSubmit)="onSave()" class="example-container">
+<mat-form-field appearance="fill">
+  <mat-label>Despesa</mat-label>
+  <input
+    matInput
+    id="despesa"
+    formControlName="despesa"
+    placeholder="ex. conta água"
+  />
+  <mat-error *ngIf="despesaForm.get('despesa')?.hasError('required')">
+    Despesa é obrigatória
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Valor</mat-label>
+  <input
+    matInput
+    id="valor"
+    formControlName="valor"
+    type="number"
+    placeholder="ex. 100.00"
+    step="0.01"
+  />
+  <mat-error *ngIf="despesaForm.get('valor')?.hasError('required')">
+    Valor é obrigatório
+  </mat-error>
+  <mat-error *ngIf="despesaForm.get('valor')?.hasError('pattern')">
+    O valor deve estar no formato correto (ex. 100.00)
+  </mat-error>
+</mat-form-field>
+
+<div class="button-container">
+  <button
+    class="cancelar-button"
+    mat-button
+    type="button"
+    (click)="onCancel()"
+  >
+    Cancelar
+  </button>
+  <button
+    class="alterar-button"
+    mat-raised-button
+    color="primary"
+    [disabled]="!despesaForm.valid"
+    type="submit"
+  >
+    Alterar
+  </button>
+</div>
+</form>
+

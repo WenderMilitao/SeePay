@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,6 +13,8 @@ import { RendimentosComponent } from './pages/rendimentos/rendimentos.component'
 import { CardComponent } from './components/card/card.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
 import { DespesaFormComponent } from './components/despesa-form/despesa-form.component';
+
+
 
 //Angular Material
 import { MatNativeDateModule } from '@angular/material/core'
@@ -31,13 +34,19 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 //Firebase
 import { firebaseConfig } from './environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DespesaTableComponent } from './components/despesa-table/despesa-table.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { EditarDespesasComponent } from './components/editar-despesas/editar-despesas.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
+import { RendimentoFormComponent } from './components/rendimento-form/rendimento-form.component';
+import { RendimentoTableComponent } from './components/rendimento-table/rendimento-table.component';
+import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.component';
+import { EditarRendimentosComponent } from './components/editar-rendimentos/editar-rendimentos.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +60,13 @@ import { ModalComponent } from './components/modal/modal.component';
     DespesasComponent,
     DespesaFormComponent,
     DespesaTableComponent,
-    ModalComponent,
+    SobreComponent,
+    RendimentoFormComponent,
+    RendimentoTableComponent,
+    NaoEncontradoComponent,
+    EditarDespesasComponent,
+    EditarRendimentosComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -76,7 +91,9 @@ import { ModalComponent } from './components/modal/modal.component';
     MatPaginatorModule,
     MatSortModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule,
+    FormsModule
 
   ],
   providers: [MatDatepickerModule],

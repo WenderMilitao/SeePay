@@ -7,17 +7,20 @@ import { AuthGuardService } from './services/auth.guard.service';
 import { HomeComponent } from './pages/home/home.component';
 import { RendimentosComponent } from './pages/rendimentos/rendimentos.component';
 import { DespesasComponent } from './pages/despesas/despesas.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
+import { NaoEncontradoComponent } from './pages/nao-encontrado/nao-encontrado.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'cadastro',
+  redirectTo: 'login',
   pathMatch: 'full',
 },
 { path: 'cadastro', component: CadastroComponent },
 
-{ path: 'login', component: LoginComponent},
+{ path: 'login', component: LoginComponent },
 
-{ path: 'menu', component: MenuComponent, canActivate: [AuthGuardService],
+{
+  path: 'menu', component: MenuComponent, canActivate: [AuthGuardService],
   children: [
     {
       path: 'home',
@@ -33,10 +36,17 @@ const routes: Routes = [{
       path: 'despesas',
       component: DespesasComponent,
     },
+
+    {
+      path: 'sobre',
+      component: SobreComponent,
+    },
   ]
- },
+},
 
-
+{
+  path: '**', component: NaoEncontradoComponent,
+}
 
 ];
 
